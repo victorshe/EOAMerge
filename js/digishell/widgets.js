@@ -17,9 +17,9 @@ define(function (require, exports) {
                     break;
                 case "h":
                     node = $("<div class='row-fluid'></div>");
-                    if (parent.children().size() > 0) {
+                    /*if (parent.children().size() > 0) {
                         parent.append("<div class='space-6'></div>");
-                    }
+                    }*/
                     break;
                 case "w":
                     var widget = exports.getWidget(define.wId, define);
@@ -45,10 +45,10 @@ define(function (require, exports) {
     }
 
     exports.DEFAULT_WIDGET = [
-        {id: "widget_gsxw", "wId": "gsxw", "col": 1, "row": 1, "size_x": 4, "size_y": 2},
-        {id: "widget_xzgg", "wId": "xzgg", "col": 1, "row": 3, "size_x": 4, "size_y": 2},
-        {id: "widget_rwxx", "wId": "RWXX", "col": 5, "row": 1, "size_x": 2, "size_y": 2},
-        {id: "widget_hydt", "wId": "hydt", "col": 5, "row": 3, "size_x": 2, "size_y": 2}
+        {id: "widget_gsxw", "wId": "gsxw", "col": 1, "row": 1, "size_x": 4, "size_y": 1},
+        {id: "widget_xzgg", "wId": "xzgg", "col": 1, "row": 2, "size_x": 4, "size_y": 1},
+        {id: "widget_rwxx", "wId": "RWXX", "col": 5, "row": 1, "size_x": 2, "size_y": 1},
+        {id: "widget_hydt", "wId": "hydt", "col": 5, "row": 2, "size_x": 2, "size_y": 1}
     ];
 
     exports.addWidget = function (extendId, model) {
