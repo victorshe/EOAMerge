@@ -99,7 +99,7 @@
         },
         ico: "",
         title: "",
-        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-title"><i><%=ico%></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div></div><div class="widget-body"></div>')
+        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-title" style="color:#ffffff"><i><%=ico%></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div></div><div class="widget-body"></div>')
     });
 
     widgets.addWidget("BASE", {
