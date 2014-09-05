@@ -99,7 +99,7 @@
         },
         ico: "",
         title: "",
-        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-title" style="color:#ffffff"><i><%=ico%></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div></div><div class="widget-body"></div>')
+        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-title" style="color:#ffffff"><i class="<%=ico%>"></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div></div><div class="widget-body"></div>')
     });
 
     widgets.addWidget("BASE", {
@@ -136,7 +136,7 @@
                 });
             }
         },
-        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-tabs-title hidden"><i class="<%=ico%>"></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div><div class="widget-toolbar no-border" style="float:left;padding-left: 5px;"><ul class="nav nav-tabs"><% _.each(tabs,function(tab,key){ %><li class="<%=(key===0?\'active\':\'\') %>"><a data-toggle="tab" href="#widget_<%=widgetId+\'_\'+tab.id%>"><%=tab.name%><span class="badge"></span></a></li><% }); %></ul></div></div><div class="widget-body" style="height:258px"></div>')
+        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-tabs-title hidden"><i class="<%=ico%>"></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div><div class="widget-toolbar no-border" style="float:left;padding-left: 5px;"><ul class="nav nav-tabs"><% _.each(tabs,function(tab,key){ %><li class="<%=(key===0?\'active\':\'\') %>"><span></span><a data-toggle="tab" href="#widget_<%=widgetId+\'_\'+tab.id%>"><%=tab.name%><span class="badge"></span></a></li><% }); %></ul></div></div><div class="widget-body" style="height:221px"></div>')
     });
 
     widgets.addWidget("TABS_BASE", {
@@ -201,7 +201,7 @@
         },
         render: function () {
             var _this = this;
-            $.post("/Produce/GeneralMessage.nsf/GetAllMsgInfoAgent?openagent", "yes^~^app|7|taskByDateDownUnDoneView|taskByDateDownDoneView^~^msg|7|msgByDateDownUnRdView|msgByDateDownRdView^~^flowinfo|7|FlowUndoView|FlowDoneView", function (xml) {
+            $.post("/Produce/GeneralMessage.nsf/GetAllMsgInfoAgent?openagent", "yes^~^app|6|taskByDateDownUnDoneView|taskByDateDownDoneView^~^msg|6|msgByDateDownUnRdView|msgByDateDownRdView^~^flowinfo|6|FlowUndoView|FlowDoneView", function (xml) {
                 var data = {},
                     info = $(xml.firstChild),
                     parseInfo = function (itemName) {
@@ -232,7 +232,7 @@
             }, "xml");
         },
         afterRender: function () {
-            var color = ["badge-yellow", "badge-info", "badge-success"],
+            var color = ["badge-yellow","badge-success"],
                 model = this.model;
             this.$el.find(".nav.nav-tabs li>a").each(function (index) {
                 var link = $(this),
@@ -250,7 +250,9 @@
         tabs: [
             {
                 id: "xzgg",
+
                 name: "行政公告"
+
             },
             {
                 id: "tz",
@@ -279,7 +281,7 @@
             }
         },
         beforeRender: function () {
-            this.$el.find(".widget-body").css("height", "110px");
+            this.$el.find(".widget-body").css("height", "160px");
         },
         template: _.template($("#TEMPLATE_WIDGET_XZGG_BODY").html())
     });
@@ -319,7 +321,7 @@
             }
         },
         beforeRender: function () {
-            this.$el.find(".widget-body").css("height", "110px");
+            this.$el.find(".widget-body").css("height", "160px");
         },
         template: _.template($("#TEMPLATE_WIDGET_CPPX_BODY").html())
     });
@@ -392,6 +394,7 @@
     widgets.addWidget("BASE", {
         widgetId: "gsxw",
         title: "公司新闻",
+        ico: "icon-rss orange",
         source: {
             type: "multiple",
             children:{
@@ -414,7 +417,7 @@
         },
         template: _.template($("#TEMPLATE_WIDGET_TPXW_BODY").html()),
         beforeRender: function (data) {
-            this.$el.find(".widget-body").css("height", "258px");
+            this.$el.find(".widget-body").css("height", "221px");
         },
         afterRender: function () {
             if (this.model.length > 0) {

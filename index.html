@@ -44,6 +44,7 @@
         <div class="navbar-banner"><img src="/DigiShell/img/banner.jpg" style="width: 100%; max-height: 120px;" /></div>
         <div class="container-fluid">
             <a href="#" class="brand">
+                <li class="icon-fire"></li>
                 <small>
                     协同办公管理平台
                 </small>
@@ -275,7 +276,7 @@
 
 <!--seajs-->
 <!-- build:script seajs -->
-<script id="seajsnode" src="/sea-modules/seajs/seajs/2.1.1/sea.js"><script>
+<script id="seajsnode" src="/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
 <!-- /build -->
 <!--[if !IE]>-->
 <script>seajs.config({vars:{'jqueryVersion':'2.0.3'}});</script>
@@ -518,7 +519,7 @@
                         <% _.each(items,function(item,key){%>
                         <div class="item <%=(key===0?'active':'')%>">
                             <a href="/<%=source.children.tpxw.path%>/0/<%=item.ThisFlowAtDocUID%>?editDocument" target="_blank" title="<%=item.StTitle%>">
-                                <div style="height:232px">
+                                <div style="height:198px">
                                     <img style="width:100%;" src="/<%=source.children.tpxw.path%>/0/<%=item.ThisFlowAtDocUID%>/$file/<%=item.StSmallPic%>" alt="<%=item.StTitle%>">
                                 </div>
                                 <div class="carousel-caption">
