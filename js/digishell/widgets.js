@@ -48,7 +48,10 @@ define(function (require, exports) {
         {id: "widget_gsxw", "wId": "gsxw", "col": 1, "row": 1, "size_x": 4, "size_y": 1},
         {id: "widget_xzgg", "wId": "xzgg", "col": 1, "row": 2, "size_x": 4, "size_y": 1},
         {id: "widget_rwxx", "wId": "RWXX", "col": 5, "row": 1, "size_x": 2, "size_y": 1},
-        {id: "widget_hydt", "wId": "hydt", "col": 5, "row": 2, "size_x": 2, "size_y": 1}
+        //{id: "widget_hydt", "wId": "hydt", "col": 5, "row": 2, "size_x": 2, "size_y": 1},
+        //{id: "widget_zdlc", "wId": "zdlc", "col": 1, "row": 3, "size_x": 4, "size_y": 1}
+        {id: "widget_zdlc", "wId": "zdlc", "col": 5, "row": 2, "size_x": 2, "size_y": 1},
+        {id: "widget_hydt", "wId": "hydt", "col": 1, "row": 3, "size_x": 4, "size_y": 1}
     ];
 
     exports.addWidget = function (extendId, model) {

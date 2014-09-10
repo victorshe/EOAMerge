@@ -454,7 +454,7 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
     display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .infoPubTable td .newFlag {
@@ -470,4 +470,12 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
 .carousel-caption {
     padding: 2px;
     bottom: 48px;
+}
+
+#fanuchome .table th, .table td{
+    padding: 4px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
 }
