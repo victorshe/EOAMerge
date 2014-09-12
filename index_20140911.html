@@ -471,7 +471,7 @@
             <tbody>
             <% _.each(model,function(row){ %>
             <tr>
-                <td><a title="<%=row.StSubject%>" href="/Application/RulesAndFlows.nsf/0/<%=row['@UNID']%>?OpenDocument&login" target="_blank"><%=row.StSubject%></a></td>
+                <td><a title="<%=row.StSubject%>" href="/Application/RulesAndFlows.nsf/0/<%=row.StMainDocUnid%>?OpenDocument&login" target="_blank"><%=row.StSubject%></a></td>
                 <td style="width:6em"><%=row.ApplyDate%></td>
             </tr>
             <% }); %>
@@ -510,10 +510,10 @@
                 <table class="table table-striped table-bordered table-hover no-thead">
                     <thead></thead>
                     <tbody>
-                    <% _.each(info,function(row){ %>
+                    <% _.each(info.items,function(row){ %>
                     <tr>
                         <td><a href="/bbs/DigiFlowBBSNew.nsf/0/<%=row['@UNID']%>?opendocument" target="_blank"><span class="text-error"><%=row.StTopFlag==="1"?"[顶]":""%><%=row.StBestFlag==="1"?"[精]":""%></span><%=row.StTitle%></a></td>
-                        <td style="width:12em"><%=row.StPostTime%></td>
+                        <td style="width:9.5em"><%=row.StPostTime%></td>
                     </tr>
                     <% }); %>
                     </tbody>
@@ -527,21 +527,7 @@
 <script type="text/template" id="TEMPLATE_WIDGET_TPXW_BODY">
     <div class="widget-main">
         <div class="row-fluid">
-            <div class="span8">
-                <table class="table table-striped no-bordered table-hover no-thead companyNewsList">
-                    <thead></thead>
-                    <tbody>
-                    <% _.each(model.gsxw,function(item,key){%>
-                    <tr>
-                        <td>
-                            <span class="title"><a href="/<%=source.children.gsxw.path%>/0/<%=item['@UNID']%>?editDocument"  target="_blank" title="<%=item.StTitle%>"><i class="icon-caret-right"></i>&nbsp;&nbsp;<%=item.StTitle%></a></span>
-                        </td>
-                    </tr>
-                    <%});%>
-                    </tbody>
-                </table>
-            </div>
-            <div class="span4">
+            <div class="span6">
                 <div id="<%=id+'_slide'%>" class="carousel slide" style="margin-bottom:0px;<%=model.length===0?'display:none':'' %>">
                     <ol class='carousel-indicators'>
                         <% var items = model.tpxw;if(items.length>1){_.each(items,function(item,key){%>
@@ -564,10 +550,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-            <!--
             <div class="span6">
                 <ul class="companyNewsList">
                     <% _.each(model.gsxw,function(item,key){%>
@@ -578,7 +560,6 @@
                     <%});%>
                 </ul>
             </div>
-            -->
         </div>
     </div>
 </script>

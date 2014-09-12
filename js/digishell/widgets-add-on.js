@@ -149,8 +149,8 @@
             },
             {
                 id: "msg",
-                name: "消息"
-            }/*,
+                name: "通知"
+            }/*,,
             {
                 id: "app",
                 name: "申请"
@@ -352,46 +352,49 @@
         title: "企业论坛",
         tabs: [
             {
-                id: "communicate",
-                name: "技术交流"
-            },
-            {
                 id: "new",
                 name: "最新贴"
-            },
+            }/*,
             {
                 id: "distillate",
                 name: "精华贴"
-            }
+            },
+            {
+                id: "communicate",
+                name: "技术交流"
+            }*/
         ],
         source: {
             type: "multiple",
             children: {
                 "new": {
                     type: "base",
-                    path: "bbs/DigiFlowBBSNew.nsf",
+                    path: "bbs/DigiFlowBBSNEW.nsf",
                     view: "TodayView",
                     field: ["StPostTime", "StTitle", "StTopFlag", "StBestFlag", "@UNID"],
-                    top: 3
-                },
+                    //field: ["StPostTime", "StTitle","@UNID"],
+                    top: 5
+                }/*,
                 "distillate": {
                     type: "base",
                     path: "bbs/DigiFlowBBSNew.nsf",
                     view: "TopTopicView",
-                    field: ["StPostTime", "StTitle", "StTopFlag", "StBestFlag", "@UNID"],
+                    //field: ["StPostTime", "StTitle", "StTopFlag", "StBestFlag", "@UNID"],
+                    field: ["StPostTime", "StTitle", "@UNID"],
                     top: 3
                 },
                 "communicate": {
-                    type: "base_with_count",
+                    type: "base",
                     path: "bbs/DigiFlowBBSNew.nsf",
                     view: "TopTopicView",
-                    field: ["StPostTime", "StTitle", "StTopFlag", "StBestFlag", "@UNID"],
+                    //field: ["StPostTime", "StTitle", "StTopFlag", "StBestFlag", "@UNID"],
+                    field: ["StPostTime", "StTitle", "@UNID"],
                     top: 3
-                }
+                }*/
             }
         },
         beforeRender: function () {
-            this.$el.find(".widget-body").css("height", "88px");
+            this.$el.find(".widget-body").css("height", "144px");
         },
         template: _.template($("#TEMPLATE_WIDGET_BBS_BODY").html())
     });
@@ -403,7 +406,7 @@
             type: "base",
             path: "Application/RulesAndFlows.nsf",
             view: "vwDone",
-            field: ["ApplyDate", "StSubject", "StMainDocUnid"],
+            field: ["ApplyDate", "StSubject", "@UNID"],
             top: 5
         },
         beforeRender: function () {
@@ -432,7 +435,8 @@
                     view: "InfoByIDView",
                     "class":"GSXW$",
                     field: ["StPubDate", "StTitle", "@UNID"],
-                    count: 8
+                    count: 6,
+                    top: 7
                 }
             }
         },

@@ -81,7 +81,8 @@
     overflow: hidden;
     width: 100%;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
+    font-size:14px;
 }
 
 .carousel-indicators li {
@@ -363,6 +364,7 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
 
 .widget-body a {
     color: #333333;
+    margin-left: 0.25em;
 }
 
 .widget-body a.carousel-control {
