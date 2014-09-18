@@ -712,35 +712,67 @@
             "parentId": "XPAGEFICO",
             "name": "固定资产"
         }, {
-            "id": "menu_faxinfa_fanuc",
+            "id": "menu_fashengou_fanuc",
             "ico": "",
-            "name": "新建固定资产新发、收回申请",
-            "dbPath": "Application/Finance/Fixset/Fixsetpuborback.nsf",
-            "form": "mainPage",
-            "source": "menuInfoXAgent.xsp",
-            "parentId": "menuG_FixedAsset_Fanuc"
-        }, {
-            "id": "menu_fachuzhi_fanuc",
-            "ico": "",
-            "name": "发起固定资产处置审批申请",
-            "dbPath": "Application/Finance/Fixset/FixsetHandle.nsf",
-            "form": "mainPage",
+            "name": "发起固定资产申购申请",
+            "dbPath": "Finance/FixedAsset/FixedAssetPurchase.nsf",
+            "form": "FixedAssetPurchaseXp",
             "source": "menuInfoXAgent.xsp",
             "parentId": "menuG_FixedAsset_Fanuc"
         }, {
             "id": "menu_fayanshou_fanuc",
             "ico": "",
             "name": "发起固定资产验收申请",
-            "dbPath": "Application/Finance/Fixset/FixsetAcceptance.nsf",
-            "form": "mainPage",
+            "dbPath": "Finance/FixedAsset/FixedAssetAcceptance.nsf",
+            "form": "FixedAssetAcceptanceXp",
             "source": "menuInfoXAgent.xsp",
             "parentId": "menuG_FixedAsset_Fanuc"
         }, {
-            "id": "menu_fabojianbaofei_fanuc",
+            "id": "menu_fadiaobo_fanuc",
             "ico": "",
-            "name": "发起无法修复的部件报废审批申请",
-            "form": "mainPage",
-            "dbPath": "Application/Finance/Fixset/NorepairAccessories.nsf",
+            "name": "发起固定资产调拨转移申请",
+            "dbPath": "Finance/FixedAsset/FixedAssetChange.nsf",
+            "form": "MainAppPage",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_borrow_fanuc",
+            "ico": "",
+            "name": "发起固定资产借用申请",
+            "form": "MainAppPage",
+            "dbPath": "Finance/FixedAsset/FixedAssetBorrow.nsf",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_return_fanuc",
+            "ico": "",
+            "name": "发起固定资产归还申请",
+            "form": "MainAppPage",
+            "dbPath": "Finance/FixedAsset/FixedAssetReturn.nsf",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_fahandle_fanuc",
+            "ico": "",
+            "name": "发起固定资产处置申请",
+            "dbPath": "Finance/FixedAsset/FixedAssetHandle.nsf",
+            "form": "FixedAssetHandleXp",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_Maintain_fanuc",
+            "ico": "",
+            "name": "发起固定资产维修申请",
+            "dbPath": "Finance/FixedAsset/FixedAssetMaintain.nsf",
+            "form": "MainAppPage",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_fadamage_fanuc",
+            "ico": "",
+            "name": "发起固定资产损失赔偿申请",
+            "dbPath": "Finance/FixedAsset/FixedAssetDamage.nsf",
+            "form": "FixedAssetDamageXp",
             "source": "menuInfoXAgent.xsp",
             "parentId": "menuG_FixedAsset_Fanuc"
         },{
@@ -1628,38 +1660,78 @@
             "parentId": "XPAGEFICO",
             "name": "固定资产"
         }, {
-            "id": "menu_faxinfa_fanuc",
+            "id": "menu_fixedasset_fanuc",
             "ico": "",
-            "name": "固定资产新发、收回流程",
-            "dbPath": "Application/Finance/Fixset/Fixsetpuborback.nsf",
+            "name": "固定资产卡片",
+            "dbPath": "Finance/FixedAsset/FixedAssetCard.nsf",
+            "view": "OtherCardView",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_faPurchase_fanuc",
+            "ico": "",
+            "name": "固定资产申购",
+            "dbPath": "Finance/FixedAsset/FixedAssetPurchase.nsf",
             "view": "vwDoing",
             "source": "menuInfoXAgent.xsp",
             "parentId": "menuG_FixedAsset_Fanuc"
         }, {
-            "id": "menu_fachuzhi_fanuc",
+            "id": "menu_faAcceptance_fanuc",
             "ico": "",
-            "name": "固定资产处置审批流程",
-            "dbPath": "Application/Finance/Fixset/FixsetHandle.nsf",
+            "name": "固定资产验收",
+            "dbPath": "Finance/FixedAsset/FixedAssetAcceptance.nsf",
             "view": "vwDoing",
             "source": "menuInfoXAgent.xsp",
             "parentId": "menuG_FixedAsset_Fanuc"
         }, {
-            "id": "menu_fayanshou_fanuc",
+            "id": "menu_fadiaobo_fanuc",
             "ico": "",
-            "name": "固定资产验收流程",
-            "dbPath": "Application/Finance/Fixset/FixsetAcceptance.nsf",
+            "name": "固定资产调拨转移",
+            "dbPath": "Finance/FixedAsset/FixedAssetChange.nsf",
             "view": "vwDoing",
             "source": "menuInfoXAgent.xsp",
             "parentId": "menuG_FixedAsset_Fanuc"
         }, {
-            "id": "menu_fabojianbaofei_fanuc",
+            "id": "menu_borrow_fanuc",
             "ico": "",
-            "name": "无法修复的部件报废审批流程",
+            "name": "固定资产借用",
             "view": "vwDoing",
-            "dbPath": "Application/Finance/Fixset/NorepairAccessories.nsf",
+            "dbPath": "Finance/FixedAsset/FixedAssetBorrow.nsf",
             "source": "menuInfoXAgent.xsp",
             "parentId": "menuG_FixedAsset_Fanuc"
         }, {
+            "id": "menu_return_fanuc",
+            "ico": "",
+            "name": "固定资产归还",
+            "view": "vwDoing",
+            "dbPath": "Finance/FixedAsset/FixedAssetReturn.nsf",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_fahandle_fanuc",
+            "ico": "",
+            "name": "固定资产处置",
+            "dbPath": "Finance/FixedAsset/FixedAssetHandle.nsf",
+            "view": "vwDoing",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_Maintain_fanuc",
+            "ico": "",
+            "name": "固定资产维修",
+            "dbPath": "Finance/FixedAsset/FixedAssetMaintain.nsf",
+            "view": "vwDoing",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        }, {
+            "id": "menu_fadamage_fanuc",
+            "ico": "",
+            "name": "固定资产损失赔偿",
+            "dbPath": "Finance/FixedAsset/FixedAssetDamage.nsf",
+            "view": "vwDoing",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "menuG_FixedAsset_Fanuc"
+        },{
             "id": "menuG_CustomerBaseData_Fanuc",
             "ico": "",
             "parentId": "XPAGEFICO",
