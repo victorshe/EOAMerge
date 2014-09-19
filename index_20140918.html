@@ -433,7 +433,7 @@
                     <tbody>
                     <% _.each(info,function(row){ var newFlag = ((new Date() - new Date(row.StPubDate.replace(/-/g,"/")))/1000/60/60/24 < 3);%>
                     <tr>
-                        <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?EditDocument&login" target="_blank"><%=row.StTitle%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td> <td style="width:6em"><%=row.StPubDate%></td>
+                        <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?EditDocument&login" target="_blank"><%=row.StTitle%></a><%=newFlag?"<span class='newFlag icon-animated-vertical'>New</span>":""%></td> <td style="width:6em"><%=row.StPubDate%></td>
                     </tr>
                     <% }); %>
                     </tbody>
@@ -464,28 +464,6 @@
 </script>-->
 
 <script type="text/template" id="TEMPLATE_WIDGET_ZDLC_BODY">
-    <div class="widget-main no-padding infoPubTable">
-        <div class="tab-content no-padding">
-            <% _.each(model,function(info,key){ var tab = _.find(tabs,function(i){return i.id===key;});%>
-            <div id="widget_<%=widgetId+'_'+key%>" class="tab-pane <%=(key===tabs[0].id?'in active':'') %>">
-                <table class="table table-striped table-bordered table-hover no-thead">
-                    <thead></thead>
-                    <tbody>
-                    <% _.each(info,function(row){ var newFlag = ((new Date() - new Date(row.ApplyDate.replace(/-/g,"/")))/1000/60/60/24 < 3);%>
-                    <tr>
-                        <td><a title="<%=row.StSubject%>" href="/Application/RulesAndFlows.nsf/0/<%=row['@UNID']%>?OpenDocument&login" target="_blank"><%=row.StSubject%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td> <td style="width:6em"><%=row.ApplyDate%></td>
-                    </tr>
-                    <% }); %>
-                    </tbody>
-                </table>
-            </div>
-            <% }); %>
-        </div>
-    </div>
-</script>
-
-<!--
-<script type="text/template" id="TEMPLATE_WIDGET_ZDLC_BODY">
     <div class="widget-main no-padding">
         <table class="table table-striped table-bordered table-hover no-thead">
             <thead>
@@ -501,7 +479,7 @@
         </table>
     </div>
 </script>
--->
+
 <script type="text/template" id="TEMPLATE_WIDGET_XZGG_BODY">
     <div class="widget-main no-padding infoPubTable">
         <div class="tab-content no-padding">
@@ -512,7 +490,7 @@
                     <tbody>
                     <% _.each(info,function(row){ var newFlag = ((new Date() - new Date(row.StPubDate.replace(/-/g,"/")))/1000/60/60/24 < 3);%>
                     <tr>
-                        <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?EditDocument&login" target="_blank"><%=row.StTitle%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td>
+                        <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?EditDocument&login" target="_blank"><%=row.StTitle%></a><%=newFlag?"<span class='newFlag icon-animated-vertical'>New</span>":""%></td>
                         <td style="width:6em"><%=row.StPubDate%></td>
                     </tr>
                     <% }); %>
@@ -535,7 +513,7 @@
                     <% _.each(info,function(row){ %>
                     <tr>
                         <td><a href="/bbs/DigiFlowBBSNew.nsf/0/<%=row['@UNID']%>?opendocument" target="_blank"><span class="text-error"><%=row.StTopFlag==="1"?"[顶]":""%><%=row.StBestFlag==="1"?"[精]":""%></span><%=row.StTitle%></a></td>
-                        <td style="width:6em"><%=row.StPostTime.slice(0,10)%></td>
+                        <td style="width:12em"><%=row.StPostTime%></td>
                     </tr>
                     <% }); %>
                     </tbody>

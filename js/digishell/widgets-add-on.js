@@ -399,7 +399,34 @@
         template: _.template($("#TEMPLATE_WIDGET_BBS_BODY").html())
     });
 
-    widgets.addWidget("BASE", {
+    widgets.addWidget("TABS_BASE", {
+        widgetId: "zdlc",
+        title: "制度与流程",
+        tabs: [
+            {
+                id: "new",
+                name: "制度与流程"
+            }
+        ],
+        source: {
+            type: "multiple",
+            children: {
+                "new": {
+                    type: "base",
+                    path: "Application/RulesAndFlows.nsf",
+                    view: "vwDone",
+                    field: ["ApplyDate", "StSubject", "@UNID"],
+                    top: 5
+                }
+            }
+        },
+        beforeRender: function () {
+            this.$el.find(".widget-body").css("height", "144px");
+        },
+        template: _.template($("#TEMPLATE_WIDGET_ZDLC_BODY").html())
+    });
+
+    /*widgets.addWidget("BASE", {
         widgetId: "zdlc",
         title: "制度与流程",
         source: {
@@ -413,7 +440,7 @@
             this.$el.find(".widget-body").css("height", "144px");
         },
         template: _.template($("#TEMPLATE_WIDGET_ZDLC_BODY").html())
-    });
+    });*/
 
     widgets.addWidget("BASE", {
         widgetId: "gsxw",

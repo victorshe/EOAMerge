@@ -360,6 +360,13 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
 
 .widget-header {
     color: #666666 !important;
+    border-radius:10px 10px 0 0 !important;
+    -webkit-border-radius: 10px 10px 0 0 !important;
+    -moz-border-radius: 10px 10px 0 0 !important;
+}
+
+.widget-box {
+    margin: 5px 0 !important;
 }
 
 .widget-body a {
@@ -386,6 +393,10 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
     white-space: nowrap;
 }
 
+[class*="header-color-"]>.widget-toolbar>[data-action="collapse"] {
+    color: #e2e2e2;
+    display:none;
+}
 /*分页控件*/
 
 .pagination ul > li.active > a, .pagination ul > li.active > a:hover {
