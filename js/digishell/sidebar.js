@@ -2509,7 +2509,7 @@
             var _this = this;
             if (item.get("view")) {
                 require.async("./viewFrame", function(frame) {
-                    digishell.router.makeBreadcrumb(convertItemsToBreadcrumb(_this.model, item), "APP");
+                    //digishell.router.makeBreadcrumb(convertItemsToBreadcrumb(_this.model, item), "APP");
                     frame.openView(item.attributes);
                     _this.render("root");
                     _this.activeItem(item);

@@ -24,9 +24,9 @@ var style = document.createElement('div').style,
     webkit = style['WebkitBorderRadius'] !== undefined,
     radius = style['borderRadius'] !== undefined || style['BorderRadius'] !== undefined,
     mode = document.documentMode || 0,
-    noBottomFold = $.browser.msie && (($.browser.version < 8 && !mode) || mode < 8),
+    noBottomFold = $.support.boxModel && (($.support.leadingWhitespace && !mode) || mode < 8),
 
-    expr = $.browser.msie && (function() {
+    expr = $.support.boxModel && (function() {
         var div = document.createElement('div');
         try { div.style.setExpression('width','0+0'); div.style.removeExpression('width'); }
         catch(e) { return false; }
@@ -174,7 +174,7 @@ $.fn.corner = function(options) {
                     else
                         ds.width = '100%';
                 }
-                else if (!bot && $.browser.msie) {
+                else if (!bot && $.support.boxModel) {
                     if ($.css(this,'position') == 'static')
                         this.style.position = 'relative';
                     ds.position = 'absolute';

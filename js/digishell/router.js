@@ -58,7 +58,7 @@ define(function (require) {
             sidebar.activeMenu();
             $(".page-content >.active").removeClass("active");
             $(".page-content .widgetContent").addClass("active");
-            $("#breadcrumbs .breadcrumb").html('<li class="active"><i class="icon-home home-icon"></i>首页</li>');
+            //$("#breadcrumbs .breadcrumb").html('<li class="active"><i class="icon-home home-icon"></i>首页</li>');
             document.title = "首页 - BEIJING-FANUC";
         },
         openWidget: function (param) {
@@ -69,7 +69,7 @@ define(function (require) {
                     id = info[0],
                     tabId = info[1],
                     widget = widgets.byId(id);
-                _this.makeBreadcrumb([
+                /*_this.makeBreadcrumb([
                     {
                         href: "#widget_" + id + (tabId ? "_" + tabId : ""),
                         name: tabId ? _.find(widget.tabs,function (item) {
@@ -79,7 +79,7 @@ define(function (require) {
                     {
                         id: "root"
                     }
-                ], "widget");
+                ], "widget");*/
                 widget.open(tabId);
             });
         },
@@ -87,7 +87,7 @@ define(function (require) {
             var match;
             //由于表达式识别的问题，暂把openMore的调用放置在此。
             if (match = /^(\S+)\?more/.exec(id)) {
-                this.makeBreadcrumb([
+                /*this.makeBreadcrumb([
                     {
                         name: match[1] === "hotForm" ? "所有申请" : "所有应用",
                         href: id
@@ -95,7 +95,7 @@ define(function (require) {
                     {
                         id: "root"
                     }
-                ], "more");
+                ], "more");*/
                 return sidebar.openMenu(match[1]).openMore();
             } else {
                 return sidebar.openMenu(id);
@@ -104,7 +104,7 @@ define(function (require) {
         openMenuItem: function (id, itemId) {
             var menu = this.openMenu(id);
             menu.getItem(itemId, function (item, items) {
-                digishell.router.makeBreadcrumb(convertItemsToBreadcrumb(items, item), "m_" + id);
+                //digishell.router.makeBreadcrumb(convertItemsToBreadcrumb(items, item), "m_" + id);
                 menu.openItem(item);
             });
         },
@@ -112,7 +112,7 @@ define(function (require) {
             var _this = this;
             sidebar.getMenu(id).getItem(itemId, function (item, items) {
                 if (item) {
-                    _this.makeBreadcrumb(convertItemsToBreadcrumb(items, item), "m_" + id);
+                   // _this.makeBreadcrumb(convertItemsToBreadcrumb(items, item), "m_" + id);
                     var appMenu = sidebar.openMenu("app");
                     appMenu.setSource({
                         dbPath: item.get("dbPath"),
@@ -126,7 +126,7 @@ define(function (require) {
         openQuery: function (id, itemId, queryId) {
             var _this = this;
             sidebar.getMenu(id).getItem(itemId, function (item, items) {
-                _this.makeBreadcrumb(convertItemsToBreadcrumb(items, item), "m_" + id);
+               // _this.makeBreadcrumb(convertItemsToBreadcrumb(items, item), "m_" + id);
                 var appMenu = sidebar.openMenu("app");
                 appMenu.setSource({
                     dbPath: item.get("dbPath"),
@@ -150,7 +150,7 @@ define(function (require) {
                             })}
                     );
                     dbQuery.getQueryNames(item.get("dbPath"), function (data) {
-                        _this.makeBreadcrumb([
+                        /*_this.makeBreadcrumb([
                             {
                                 name: data[queryId].name
                             },
@@ -160,7 +160,7 @@ define(function (require) {
                             {
                                 id: "root"
                             }
-                        ], "APP");
+                        ], "APP");*/
                         dbQuery.loadQuery(item.get("dbPath"), queryId);
                     });
                 });
@@ -168,15 +168,15 @@ define(function (require) {
         },
         openConfig: function () {
             var _this = this;
-            _this.makeBreadcrumb([
+            /*_this.makeBreadcrumb([
                 {
                     name: "个人设置",
                     href: "#config"
                 },
                 {
                     id: "root"
-                }
-            ], "config");
+                }*
+            ], "config");*/
             $(".page-content >.active").removeClass("active");
             $(".page-content .config").addClass("active");
             require.async("./config", function (config) {
