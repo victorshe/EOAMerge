@@ -149,7 +149,7 @@
             },
             {
                 id: "msg",
-                name: "通知"
+                name: "消息"
             }/*,,
             {
                 id: "app",
@@ -250,13 +250,7 @@
         tabs: [
             {
                 id: "xzgg",
-
                 name: "行政公告"
-
-            },
-            {
-                id: "tz",
-                name: "通知"
             }
         ],
         source: {
@@ -269,7 +263,27 @@
                     "class": "XZGG$",
                     field: ["StPubDate", "StTitle", "@UNID"],
                     top: 5
-                },
+                }
+            }
+        },
+        beforeRender: function () {
+            this.$el.find(".widget-body").css("height", "144px");
+        },
+        template: _.template($("#TEMPLATE_WIDGET_XZGG_BODY").html())
+    });
+
+    widgets.addWidget("TABS_BASE", {
+        widgetId: "xztz",
+        title: "通知",
+        tabs: [
+            {
+                id: "tz",
+                name: "通知"
+            }
+        ],
+        source: {
+            type: "multiple",
+            children: {
                 "tz": {
                     type: "base",
                     path: "Application/DigiFlowInfoPublish.nsf",
@@ -307,17 +321,12 @@
     });
     */
     widgets.addWidget("TABS_BASE", {
-        widgetId: "hydt",
-        title: "制度",
+        widgetId: "cyzl",
+        title: "常用资料",
         tabs: [
-
             {
                 id: "cyzl",
                 name: "常用资料"
-            },
-            {
-                id: "cppx",
-                name: "产品培训"
             }
         ],
         source: {
@@ -330,7 +339,27 @@
                     "class": "CYZL$",
                     field: ["StPubDate", "StTitle", "@UNID"],
                     top: 5
-                },
+                }
+            }
+        },
+        beforeRender: function () {
+            this.$el.find(".widget-body").css("height", "144px");
+        },
+        template: _.template($("#TEMPLATE_WIDGET_CPPX_BODY").html())
+    });
+
+    widgets.addWidget("TABS_BASE", {
+        widgetId: "cppx",
+        title: "产品培训",
+        tabs: [
+            {
+                id: "cppx",
+                name: "产品培训"
+            }
+        ],
+        source: {
+            type: "multiple",
+            children: {
                 "cppx": {
                     type: "base",
                     path: "Application/DigiFlowInfoPublish.nsf",
@@ -338,7 +367,7 @@
                     "class": "CPPX$",
                     field: ["StPubDate", "StTitle", "@UNID"],
                     top: 5
-                },
+                }
             }
         },
         beforeRender: function () {
