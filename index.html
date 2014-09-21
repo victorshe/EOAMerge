@@ -29,6 +29,27 @@
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="/DigiShell/css/ace-ie.min.css"/>
+    <script type="text/javascript">
+        var head = document.getElementsByTagName('head')[0],
+        style = document.createElement('style');
+        style.type = 'text/css';
+        style.styleSheet.cssText = ':before,:after{content:none !important';
+        head.appendChild(style);
+        setTimeout(function(){
+        head.removeChild(style);
+        }, 0);
+
+        document.onkeydown = function (e) {
+            var ev = window.event || e;
+            var code = ev.keyCode || ev.which;
+            if (code == 116) {
+                ev.keyCode ? ev.keyCode = 0 : ev.which = 0;
+                window.location.href  =window.location.href;
+                cancelBubble = true;
+                return false;
+            }
+        }
+    </script>
     <![endif]-->
 
     <!--inline styles related to this page-->
@@ -685,6 +706,9 @@
         </table>
     </div>
 </script>
+
+
+
 
 </body>
 </html>
