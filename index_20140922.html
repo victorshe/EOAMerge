@@ -155,18 +155,18 @@
 
         <div class="sidebar-shortcuts" id="sidebar-shortcuts">
             <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-                <a id="fromMenu" class="btn btn-small btn-info active" style="font-size: 12px;" data-toggle="tab" href="#hotFormMenu" onclick="$('#appsMenu').removeClass('btn-info').addClass('btn-yellow') ;$('#fromMenu').removeClass('btn-yellow').addClass('btn-info')" title="常用申请">
+                <a class="btn btn-small btn-success active" style="padding: 0px 2px;font-size: 12px;" data-toggle="tab" href="#hotFormMenu" title="常用申请">
                     <i class="icon-edit"></i>
                     申请
                 </a>
-                <a id="appsMenu" class="btn btn-small btn-yellow"style="font-size: 12px;" onclick="$('#fromMenu').removeClass('btn-info').addClass('btn-yellow') ;$('#appsMenu').removeClass('btn-yellow').addClass('btn-info')" data-toggle="tab" href="#hotAppMenu" title="常用应用">
+                <a class="btn btn-small btn-info"style="padding: 0px 2px;font-size: 12px;"  data-toggle="tab" href="#hotAppMenu" title="常用应用">
                     <i class="icon-tags"></i>
                     应用
                 </a>
                 <a class="btn btn-small btn-warning" style="display: none" data-toggle="tab" href="#siteMenu" title="全部应用">
                     <i class="icon-location-arrow"></i>
                 </a>
-                <a class="btn btn-small btn-danger" style="display: none;padding: 0px 2px;font-size: 12px;" data-toggle="tab" href="#switchMenu" title="门户切换">
+                <a class="btn btn-small btn-danger" style="padding: 0px 2px;font-size: 12px;" data-toggle="tab" href="#switchMenu" title="门户切换">
                     <i class="icon-th-large"></i>
                     门户
                 </a>
@@ -218,31 +218,13 @@
                 <li>
                     <a href="/Application/WeekWordSummary.nsf/AppMainForm?openform" target="_blank">
                         <i class="icon-edit blue"></i>
-                        <span>工作总结</span>
+                        <span>新建工作总结</span>
                     </a>
                 </li>
                 <li>
                     <a href="/Application/GongZuoQSReport.nsf/mainformXp.xsp" target="_blank">
                         <i class="icon-comments-alt green"></i>
-                        <span>工作请示报告</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Finance/TravelReim.nsf/MainFormXp.xsp" target="_blank">
-                        <i class="icon-retweet orange"></i>
-                        <span>差旅费报销</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Produce/DigiFlowSynchronizeData.nsf/xpHRLogin.xsp" target="_blank">
-                        <i class="icon-group blue"></i>
-                        <span>EHR首页</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://oa.bj-fanuc.com.cn" target="_blank">
-                        <i class="icon-map-marker green"></i>
-                        <span>OA首页</span>
+                        <span>新建工作请示报告</span>
                     </a>
                 </li>
             </ul>
@@ -391,10 +373,10 @@
                         <span class="blue"></span>
                         <%=title%>
                     </span>
-                   <!-- <span class="msg-time">
+                    <span class="msg-time">
                         <i class="icon-time"></i>
                         <span><%=item["@Create"].replace(" GMT","")%></span>
-                    </span>-->
+                    </span>
                 </span>
             </a>
         </li>
@@ -447,7 +429,7 @@
             <% _.each(model,function(row){ %>
             <tr>
                 <td><a href="#<%=row['@UNID']%>"><%=row.StTitle%></a></td>
-                <!--<td><%=row.STPUBTIME%></td>-->
+                <td><%=row.STPUBTIME%></td>
             </tr>
             <% }); %>
             </tbody>
@@ -466,7 +448,7 @@
                     <% _.each(info.items,function(row){ %>
                     <tr>
                         <td><a title="<%=row.title%>" href="<%=row.url%>" target="_blank"><%=row.title%></a></td>
-                        <!--<td style="width:6em"><%=row.date%></td>-->
+                        <td style="width:6em"><%=row.date%></td>
                     </tr>
                     <% }); %>
                     </tbody>
@@ -487,7 +469,7 @@
                     <tbody>
                     <% _.each(info,function(row){ var newFlag = ((new Date() - new Date(row.StPubDate.replace(/-/g,"/")))/1000/60/60/24 < 3);%>
                     <tr>
-                        <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?EditDocument&login" target="_blank"><%=row.StTitle%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td><!--<td style="width:6em"><%=row.StPubDate%></td>-->
+                        <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?EditDocument&login" target="_blank"><%=row.StTitle%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td> <td style="width:6em"><%=row.StPubDate%></td>
                     </tr>
                     <% }); %>
                     </tbody>
@@ -527,7 +509,7 @@
                     <tbody>
                     <% _.each(info,function(row){ var newFlag = ((new Date() - new Date(row.ApplyDate.replace(/-/g,"/")))/1000/60/60/24 < 3);%>
                     <tr>
-                        <td><a title="<%=row.StSubject%>" href="/Application/RulesAndFlows.nsf/0/<%=row['@UNID']%>?OpenDocument&login" target="_blank"><%=row.StSubject%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td> <!--<td style="width:6em"><%=row.ApplyDate%></td>-->
+                        <td><a title="<%=row.StSubject%>" href="/Application/RulesAndFlows.nsf/0/<%=row['@UNID']%>?OpenDocument&login" target="_blank"><%=row.StSubject%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td> <td style="width:6em"><%=row.ApplyDate%></td>
                     </tr>
                     <% }); %>
                     </tbody>
@@ -567,7 +549,7 @@
                     <% _.each(info,function(row){ var newFlag = ((new Date() - new Date(row.StPubDate.replace(/-/g,"/")))/1000/60/60/24 < 3);%>
                     <tr>
                         <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?EditDocument&login" target="_blank"><%=row.StTitle%></a><%=newFlag?"<img src='/Digishell/img/new.gif'>":""%></td>
-                        <!--<td style="width:6em"><%=row.StPubDate%></td>-->
+                        <td style="width:6em"><%=row.StPubDate%></td>
                     </tr>
                     <% }); %>
                     </tbody>
@@ -589,7 +571,7 @@
                     <% _.each(info,function(row){ %>
                     <tr>
                         <td><a href="/bbs/DigiFlowBBSNew.nsf/0/<%=row['@UNID']%>?opendocument" target="_blank"><span class="text-error"><%=row.StTopFlag==="1"?"[顶]":""%><%=row.StBestFlag==="1"?"[精]":""%></span><%=row.StTitle%></a></td>
-                        <!--<td style="width:6em"><%=row.StPostTime.slice(0,10)%></td>-->
+                        <td style="width:6em"><%=row.StPostTime.slice(0,10)%></td>
                     </tr>
                     <% }); %>
                     </tbody>

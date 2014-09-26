@@ -14,7 +14,7 @@
 })(function ($) {
     /*jshint -W065 */
     //可配置属性
-    var config = {
+     var config = {
             //父节点选择器
             parent: ".viewData",
             //是否显示序号
@@ -146,8 +146,8 @@
             var param = {
                 dbPath: state.server ? (state.server + "!!" + state.dbPath) : state.dbPath,
                 view: state.view,
-                count: config.count,
-                start: (state.page - 1) * config.count
+                count: 25,
+                start: (state.page - 1) * 25
             };
             if (state.sort && state.sort.type) {
                 param.sort = state.sort.item;
@@ -175,7 +175,7 @@
             var entry = entries[index];
             var row = $("<tr>");
             if (config.rowIndex) {
-                var rowIndex = config.count * (state.page - 1) + index + 1;
+                var rowIndex = 25 * (state.page - 1) + index + 1;
                 var td = $("<td>" + rowIndex + "</td>");
                 if (config.checkbox) {
                     td.html(config.checkboxTemplate(rowIndex));
@@ -229,7 +229,7 @@
         //视图文档总数
         var docNum = parseInt(state.viewInfo["entriesCount"] || 0), //当前页
             curPage = state.page, //分页页数
-            pageNum = state.pageCount = parseInt(docNum / config.count) + (docNum % config.count > 0 ? 1 : 0);
+            pageNum = state.pageCount = parseInt(docNum / 25) + (docNum % 25 > 0 ? 1 : 0);
         //初始化分页控件
         if (!pagerNode) {
             pagerNode = $("<div class='pagination'><ul></ul><span class='sum'>共<span class='badge'>" + docNum + "</span>条文档</span>").appendTo(domNode);

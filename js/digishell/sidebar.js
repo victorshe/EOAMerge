@@ -21,47 +21,47 @@
             "level": 0
         }, {
             "id": "MENU_XSB",
-            "ico": "icon-truck",
+            "ico": "icon-truck blue",
             "name": "销售部",
             "parentId": "root"
         }, {
             "id": "Fanuc_SCB",
-            "ico": "icon-bar-chart",
+            "ico": "icon-bar-chart blue",
             "parentId": "root",
             "name": "市场部"
         }, {
             "id": "MENU_WXB",
-            "ico": "icon-gears",
+            "ico": "icon-gears blue",
             "name": "维修部",
             "parentId": "root"
         },  {
             "id": "MENU_JSB",
-            "ico": "icon-beaker",
+            "ico": "icon-beaker blue",
             "name": "技术部",
             "parentId": "root"
         }, {
             "id": "MENU_YWB",
-            "ico": "icon-road",
+            "ico": "icon-road blue",
             "name": "业务部",
             "parentId": "root"
         },{
             "id": "MENU_GLB",
-            "ico": "icon-briefcase",
+            "ico": "icon-briefcase blue",
             "name": "管理部",
             "parentId": "root"
         }, {
             "id": "XPAGEFICO",
-            "ico": "icon-credit-card",
+            "ico": "icon-credit-card blue",
             "name": "财务部",
             "parentId": "root"
         }, {
             "id": "Fanuc_IT",
-            "ico": "icon-desktop",
+            "ico": "icon-desktop blue",
             "parentId": "root",
             "name": "IT部"
         }, {
                 "id": "Fanuc_PUBLIC",
-                "ico": "icon-bookmark",
+                "ico": "icon-bookmark blue",
                 "parentId": "root",
                 "name": "公共应用"
         }, {
@@ -361,6 +361,14 @@
             "source": "menuInfoXAgent.xsp",
             "parentId": "MENU_GLB"
         }, {
+            "id": "InfoPublish",
+            "ico": "",
+            "name": "发起信息发布",
+            "dbPath": "Application/DigiFlowInfoPublish.nsf",
+            "form": "mainPage",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "MENU_GLB"
+        },{
             "id": "officeBerNumApp",
             "ico": "",
             "name": "发起办公号码申请",
@@ -930,47 +938,47 @@
             "level": 0
         }, {
             "id": "MENU_XSB",
-            "ico": "icon-truck",
+            "ico": "icon-truck red",
             "name": "销售部",
             "parentId": "root"
         }, {
             "id": "Fanuc_SCB",
-            "ico": "icon-bar-chart",
+            "ico": "icon-bar-chart red",
             "parentId": "root",
             "name": "市场部"
         }, {
             "id": "MENU_WXB",
-            "ico": "icon-gears",
+            "ico": "icon-gears red",
             "name": "维修部",
             "parentId": "root"
         },  {
             "id": "MENU_JSB",
-            "ico": "icon-beaker",
+            "ico": "icon-beaker red",
             "name": "技术部",
             "parentId": "root"
         }, {
             "id": "MENU_YWB",
-            "ico": "icon-road",
+            "ico": "icon-road red",
             "name": "业务部",
             "parentId": "root"
         },{
             "id": "MENU_GLB",
-            "ico": "icon-briefcase",
+            "ico": "icon-briefcase red",
             "name": "管理部",
             "parentId": "root"
         }, {
             "id": "XPAGEFICO",
-            "ico": "icon-credit-card",
+            "ico": "icon-credit-card red",
             "name": "财务部",
             "parentId": "root"
         }, {
             "id": "Fanuc_IT",
-            "ico": "icon-desktop",
+            "ico": "icon-desktop red",
             "parentId": "root",
             "name": "IT部"
         }, {
             "id": "Fanuc_PUBLIC",
-            "ico": "icon-bookmark",
+            "ico": "icon-bookmark red",
             "parentId": "root",
             "name": "公共应用"
         }, {
@@ -1270,6 +1278,14 @@
             "source": "menuInfoXAgent.xsp",
             "parentId": "MENU_GLB"
         }, {
+            "id": "InfoPublish",
+            "ico": "",
+            "name": "信息发布",
+            "dbPath": "Application/DigiFlowInfoPublish.nsf",
+            "view": "vwDone",
+            "source": "menuInfoXAgent.xsp",
+            "parentId": "MENU_GLB"
+        },{
             "id": "officeBerNumApp",
             "ico": "",
             "name": "办公号码申请",
@@ -1856,7 +1872,7 @@
 			"view": "vwDoing",
 			"source": "menuInfoXAgent.xsp",
 			"parentId": "Fanuc_SCB"
-		}],
+		}]/*,
         "switch": [{
             "id": "root",
             "level": 0
@@ -1884,7 +1900,7 @@
             "ico": "icon-map-marker",
             "opt": "window.open('http://oa.bj-fanuc.com.cn','_blank')",
             "parentId": "root"
-        }]
+        }]*/
     };
 
     function convertItemsToBreadcrumb(items, item) {
