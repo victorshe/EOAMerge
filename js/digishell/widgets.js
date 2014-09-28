@@ -13,8 +13,8 @@ define(function (require, exports) {
         $.each(layoutConfig, function (key, define) {
             switch (define.type) {
                 case "v":
-                    node = $("<div class='span" + 12 / (curWidth / define.size_x) + " widget-container-span'></div>");
-                    //node = $("<div class='span" + define.size_x + " widget-container-span'></div>");
+                    //node = $("<div class='span" + 12 / (curWidth / define.size_x) + " widget-container-span'></div>");
+                    node = $("<div class='span" + define.size_x + " widget-container-span'></div>");
                     break;
                 case "h":
                     node = $("<div class='row-fluid'></div>");
@@ -46,14 +46,15 @@ define(function (require, exports) {
     }
 
     exports.DEFAULT_WIDGET = [
-        {id: "widget_gsxw", "wId": "gsxw", "col": 1, "row": 1, "size_x": 4, "size_y": 1},
-        {id: "widget_rwxx", "wId": "RWXX", "col": 5, "row": 1, "size_x": 2, "size_y": 1},
-        {id: "widget_xzgg", "wId": "xzgg", "col": 1, "row": 2, "size_x": 4, "size_y": 1},
-        {id: "widget_xztz", "wId": "xztz", "col":5, "row": 2, "size_x": 2, "size_y": 1},
-        {id: "widget_zdlc", "wId": "zdlc", "col": 1, "row": 3, "size_x": 4, "size_y": 1},
-        {id: "widget_cyzl", "wId": "cyzl", "col": 5, "row": 3, "size_x": 2, "size_y": 1},
-        {id: "widget_bbs", "wId": "bbs", "col": 1, "row": 4, "size_x": 4, "size_y": 1},
-        {id: "widget_cppx", "wId": "cppx", "col": 5, "row": 4, "size_x": 2, "size_y": 1}
+        {id: "widget_gsxw", "wId": "gsxw", "col": 1, "row": 1, "size_x": 9, "size_y": 1},
+        {id: "widget_rwxx", "wId": "RWXX", "col": 10, "row": 1, "size_x": 3, "size_y": 1},
+        {id: "widget_xzgg", "wId": "xzgg", "col": 1, "row": 2, "size_x": 9, "size_y": 1},
+        {id: "widget_xztz", "wId": "xztz", "col":10, "row": 2, "size_x": 3, "size_y": 1},
+        {id: "widget_zdlc", "wId": "zdlc", "col": 1, "row": 3, "size_x": 9, "size_y": 1},
+        {id: "widget_cyzl", "wId": "cyzl", "col": 10, "row": 3, "size_x": 3, "size_y": 1},
+        {id: "widget_bbs", "wId": "bbs", "col": 1, "row": 4, "size_x": 9, "size_y": 1},
+        {id: "widget_cppx", "wId": "cppx", "col": 10, "row": 4, "size_x": 3, "size_y": 1}
+
     ];
 
     exports.addWidget = function (extendId, model) {

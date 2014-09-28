@@ -99,7 +99,7 @@
         },
         ico: "",
         title: "",
-        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-title" style="color:#ffffff"><i class="<%=ico%>"></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div></div><div class="widget-body"></div>')
+        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-title" style="color:#ffffff"><i class="<%=ico%>"></i><%=title%></h5></div><div class="widget-body"></div>')
     });
 
     widgets.addWidget("BASE", {
@@ -136,7 +136,7 @@
                 });
             }
         },
-        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-tabs-title hidden"><i class="<%=ico%>"></i><%=title%></h5><div class="widget-toolbar"><a href="#" data-action="reload"><i class="icon-refresh"></i></a><a href="#" data-action="collapse"><i class="icon-chevron-up"></i></a></div><div class="widget-toolbar no-border" style="float:left;padding-left: 5px;"><ul class="nav nav-tabs"><% _.each(tabs,function(tab,key){ %><li class="<%=(key===0?\'active\':\'\') %>"><span></span><a data-toggle="tab" href="#widget_<%=widgetId+\'_\'+tab.id%>"><%=tab.name%><span class="badge"></span></a></li><% }); %></ul></div></div><div class="widget-body" style="height:231px"></div>')
+        content: _.template('<div class="widget-header header-color-blue"><h5 class="widget-tabs-title hidden"><i class="<%=ico%>"></i><%=title%></h5><div class="widget-toolbar no-border" style="float:left;padding-left: 5px;"><ul class="nav nav-tabs"><% _.each(tabs,function(tab,key){ %><li class="<%=(key===0?\'active\':\'\') %>"><span></span><a data-toggle="tab" href="#widget_<%=widgetId+\'_\'+tab.id%>"><%=tab.name%><span class="badge"></span></a></li><% }); %></ul></div></div><div class="widget-body" style="height:231px"></div>')
     });
 
     widgets.addWidget("TABS_BASE", {
@@ -244,9 +244,9 @@
         }
     });
 
-    widgets.addWidget("TABS_BASE", {
+    widgets.addWidget("BASE", {
         widgetId: "xzgg",
-        title: "公告",
+        title: "行政公告",
         tabs: [
             {
                 id: "xzgg",
@@ -272,7 +272,7 @@
         template: _.template($("#TEMPLATE_WIDGET_XZGG_BODY").html())
     });
 
-    widgets.addWidget("TABS_BASE", {
+    widgets.addWidget("BASE", {
         widgetId: "xztz",
         title: "通知",
         tabs: [
@@ -320,7 +320,7 @@
         template: _.template($("#TEMPLATE_WIDGET_XZGG_BODY").html())
     });
     */
-    widgets.addWidget("TABS_BASE", {
+    widgets.addWidget("BASE", {
         widgetId: "cyzl",
         title: "常用资料",
         tabs: [
@@ -348,7 +348,7 @@
         template: _.template($("#TEMPLATE_WIDGET_CPPX_BODY").html())
     });
 
-    widgets.addWidget("TABS_BASE", {
+    widgets.addWidget("BASE", {
         widgetId: "cppx",
         title: "产品培训",
         tabs: [
@@ -376,7 +376,7 @@
         template: _.template($("#TEMPLATE_WIDGET_CPPX_BODY").html())
     });
 
-    widgets.addWidget("TABS_BASE", {
+    widgets.addWidget("BASE", {
         widgetId: "bbs",
         title: "企业论坛",
         tabs: [
@@ -428,7 +428,7 @@
         template: _.template($("#TEMPLATE_WIDGET_BBS_BODY").html())
     });
 
-    widgets.addWidget("TABS_BASE", {
+    widgets.addWidget("BASE", {
         widgetId: "zdlc",
         title: "制度与流程",
         tabs: [

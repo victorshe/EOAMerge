@@ -506,3 +506,15 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
     vertical-align: top;
     border-top: 1px solid #ddd;
 }
+
+#fanuchome .container-fluid {
+    background: url("/DigiShell/img/background-1.png") repeat-x;
+}
+
+#fanuchome .ace-nav>li.light-blue {
+    background: transparent;
+}
+
+#fanuchome .header-color-blue{
+    background: url("/DigiShell/img/background-2.png") repeat-x;
+}
