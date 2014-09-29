@@ -5,7 +5,10 @@ define(function (require) {
         router = require("./router"),
         widgets = require("./widgets"),
         sidebar = require("./sidebar"),
-        theme = require("./theme");
+        theme = require("./theme"),
+        fisheye = require("./fisheye"),
+        iutil = require("./iutil");
+
 
     $(function () {
         $(".user-name").text((function (name) {
@@ -15,6 +18,18 @@ define(function (require) {
             }
             return names.join(" ");
         })(util.getUserName() || util.getUserId()));
+    });
+
+    $(document).ready(function(){
+        $('#dock').Fisheye({
+            maxWidth: 50,
+            items: 'a',
+            itemsText: 'span',
+            container: '.dock-container',
+            itemWidth: 60,
+            proximity: 90,
+            halign : 'left'
+        })
     });
 
     return {
